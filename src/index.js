@@ -96,4 +96,19 @@ app.post("/withdraw", verifyExistsAccountCPF, (request, response) => {
   return response.status(201).send();
 });
 
+app.get("/statement/date", verifyExistsAccountCPF, (request, response) => {
+  const { customer } = request;
+  const { date } = request.query;
+
+  const dateFormat = new Date(date + " 00:00");
+
+  const statement = customer.statement.filter(
+    statement => 
+    statement.created_at.toDateString() === 
+    dateFormat.toDateString());
+
+
+  return response.json(statement);
+});
+
 app.listen(3333, () => console.log("🚀 Server started on port 3333!"));
