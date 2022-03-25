@@ -111,4 +111,13 @@ app.get("/statement/date", verifyExistsAccountCPF, (request, response) => {
   return response.json(statement);
 });
 
+app.put("/account", verifyExistsAccountCPF,(request, response) => {
+  const { name } = request.body;
+  const { customer } = request;
+
+  customer.name = name;
+
+  return response.status(201).send();
+});
+
 app.listen(3333, () => console.log("🚀 Server started on port 3333!"));
