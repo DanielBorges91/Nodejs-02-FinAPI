@@ -1,0 +1,11 @@
+{
+  "name": "nodejs-fin-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/DanielBorges91/nodejs-fin-api.git",
+  "author": "Daniel Borges <danprog91@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
